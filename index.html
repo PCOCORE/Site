@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Exemplo</title>
+
+    <!-- Adicione o trecho de código da fonte Montserrat aqui -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <!-- Adicione o trecho de código da fonte Montserrat aqui -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+
+    <!-- Adicione o link para a biblioteca Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Adicione o link para a biblioteca Slick Carousel -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: black; /* Definir a cor do texto para preto */
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between; /* Distribui o espaço entre os elementos, movendo o logo para a esquerda */
+            align-items: center; /* Centraliza o conteúdo verticalmente */
+            padding: 10px;
+            background-color: #041E42; /* Cor de fundo do cabeçalho */
+        }
+        
+        header img {
+            max-width: 15%; /* Garante que a largura do logo não ultrapasse a largura do contêiner */
+            height: auto; /* Mantém a proporção do logo */
+        }
+        
+        
+        nav {
+            background-color: #f24f00; /* Verde-água mais escuro */
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #333; /* Cor de destaque ao passar o mouse */
+        }
+        section {
+            position: relative;
+            
+        }
+
+        .image-section {
+            height: 400px; /* Altura da imagem */
+            background-image: url('negocios_digitales.webp'); /* Substitua com o URL da sua imagem */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(10, 10, 10, 0.5); /* Branco translúcido */
+        }
+
+        .image-section-content {
+            display: flex;
+            flex-direction: column;
+            color: white;
+            position: relative;
+            z-index: 1;
+            padding: 20px; /* Adiciona espaço ao redor do conteúdo */
+        }
+
+        .image-section h2 {
+            margin: 0;
+            font-size: 50px;
+            padding: 5px;
+            margin-top: 20px;
+            margin-bottom: 5px; /* Reduz o espaço abaixo do título */
+        }
+
+        .image-section p {
+            margin: 10px 0;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        .button {
+            margin-top: 20px; /* Adicione um espaço entre o texto e o botão */
+            padding: 12px 20px; /* Ajuste o tamanho do botão aqui */
+            background-color: #f24f00; /* Verde-água mais escuro */
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 10px; /* Cantos arredondados */
+            align-self: center; /* Centraliza o botão abaixo do texto */
+        }
+
+        /* Adiciona efeito de clique ao passar o mouse sobre a sessão */
+        .section-hover:hover {
+            background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
+        }
+
+        .section-hover1 {
+            max-width: 1000px; /* Defina a largura máxima desejada */
+            margin: 0 auto; /* Adiciona margens automáticas para centralizar na horizontal */
+            padding: 20px; /* Adiciona algum espaçamento interno */
+            background-color: #f0f0f0; /* Cor de fundo da sessão */
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .section-hover1:hover {
+            background-color: #ffe3c7; /* Altera a cor de fundo ao passar o mouse */
+        }
+
+        .section-hover2 {
+            max-width: 1000px; /* Defina a largura máxima desejada */
+            margin: 0 auto; /* Adiciona margens automáticas para centralizar na horizontal */
+            padding: 20px; /* Adiciona algum espaçamento interno */
+            background-color: #ffe3c7; /* Cor de fundo da sessão */
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .section-hover2:hover {
+            background-color: #ffe3c7; /* Altera a cor de fundo ao passar o mouse */
+        }
+
+        h2 {
+            font-weight: bold;
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 20px; /* Adiciona espaço abaixo do título */
+        }
+
+        .service-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .service {
+            width: 30%;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            border: 1px solid #ffe3c7;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .service img {
+            max-width: 80%; /* Define a largura máxima das imagens */
+            height: auto; /* Mantém a proporção da imagem */
+            border-radius: 5px; /* Adiciona cantos arredondados às imagens */
+        }
+
+        .service:hover {
+            background-color: #ffe3c7;
+        }
+
+        .testimonial-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        
+        .testimonial {
+            width: 40%; /* Ajuste a largura conforme necessário */
+            padding: 20px;
+            text-align: center;
+            
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            box-sizing: border-box; /* Garante que padding não aumente a largura total */
+        }
+        
+        .testimonial img {
+            max-width: 50%; /* Define a largura máxima das imagens */
+            height: auto; /* Mantém a proporção da imagem */
+            border-radius: 50%; /* Torna a imagem redonda */
+        }
+        
+        .testimonial:hover {
+            background-color: #ffe3c7;
+        }
+
+
+
+
+
+        .section-hover2 {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            margin: 50px;
+        }
+        
+        
+        .section-content {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .section-text {
+            width: 60%;
+        }
+        
+        .section-text h2 {
+            font-weight: bold;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .section-text h3 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        
+        .section-text p {
+            font-size: 18px;
+            
+            left: 200px;
+        }
+        
+        .section-image {
+            width: 35%;
+        }
+        
+        .section-image img {
+            width: 80%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+
+        .section-content {
+            display: flex;
+            flex-direction: row-reverse; /* Inverte a ordem dos itens na seção */
+        }
+        
+        .section-image {
+            margin-right: 20px; /* Adiciona um espaçamento à direita da imagem */
+            margin-left: 0; /* Remove o espaçamento à esquerda da imagem */
+        }
+        
+
+
+        .carousel-container {
+            max-width: 80%;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        .client-logo {
+            width: 100px; /* Ajuste conforme necessário */
+            height: auto;
+            margin: 0 auto;
+        }
+
+
+
+        /* Adicione este código ao seu bloco de estilos CSS existente */
+
+.about-us-section {
+    background-color: #ffe3c7; /* Cor de fundo da seção "Sobre Nós" */
+    padding: 40px; /* Espaçamento interno da seção */
+}
+
+.section-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-text {
+    width: 60%;
+}
+
+.section-text h2 {
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.section-text p {
+    font-size: 18px;
+}
+
+.section-image {
+    width: 35%;
+}
+
+.section-image img {
+    width: 100%; /* Garante que a imagem preencha a largura da div */
+    height: auto;
+    border-radius: 10px;
+}
+
+
+
+
+
+/* Adicione ao seu bloco de estilos CSS existente */
+
+.contact-section {
+    display: flex;
+    justify-content: space-between; /* Distribui os elementos horizontalmente */
+    align-items: flex-start; /* Alinha os elementos no topo */
+}
+
+.container {
+    width: 48%; /* Reduzi a largura para permitir espaço para as margens */
+}
+
+.contact-info {
+    width: 48%; /* Reduzi a largura para permitir espaço para as margens */
+}
+
+.container, .contact-info {
+    padding: 20px; /* Adiciona um espaço interno aos elementos */
+    box-sizing: border-box; /* Considera o padding no cálculo da largura */
+    margin-bottom: 100px;
+}
+
+input[type=text], textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: rgb(240, 240, 240); /* Fundo cinza claro */
+}
+
+button {
+    background-color: #f24f00;
+    color: white;
+    padding: 10px 16px; /* Reduzindo o preenchimento vertical e horizontal */
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+button:hover {
+    opacity: 0.8;
+}
+
+
+
+
+footer {
+    background-color: #041E42;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+}
+
+.social-media a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-media a:hover {
+    color: #66c2a5; /* Cor de destaque ao passar o mouse */
+}
+
+.company-info {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-navigation {
+    flex: 1;
+    text-align: right;
+}
+
+.footer-navigation a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-navigation a:hover {
+    color: #f24f00; /* Cor de destaque ao passar o mouse */
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #041E42;
+}
+
+header img {
+    max-width: 15%;
+    height: auto;
+}
+
+nav {
+    background-color: #f24f00;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #333;
+}
+
+
+
+/* Estilos para telas médias */
+@media screen and (max-width: 768px) {
+    header img {
+        max-width: 30%;
+    }
+
+    .section-text,
+    .section-image {
+        width: 100%;
+    }
+
+    .service {
+        width: 100%;
+        margin-bottom: 20px; /* Adiciona espaço entre os serviços */
+    }
+
+    .testimonial {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .contact-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container, .contact-info {
+        width: 100%;
+    }
+
+    /* Reorganize a ordem da imagem e do texto para seções com imagens e texto */
+    .section-content {
+        flex-direction: column-reverse; /* Inverte a ordem dos elementos na seção */
+    }
+
+    /* Ajuste a ordem dos depoimentos */
+    .testimonial-container {
+        flex-direction: column; /* Empilha os depoimentos verticalmente */
+    }
+}
+
+/* Estilos para telas pequenas */
+@media screen and (max-width: 520px) {
+    header img {
+        max-width: 50%;
+    }
+
+    .section-text,
+    .section-image {
+        width: 100%;
+    }
+
+    .service {
+        width: 100%;
+        margin-bottom: 20px; /* Adiciona espaço entre os serviços */
+    }
+
+    .testimonial {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .contact-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container, .contact-info {
+        width: 100%;
+    }
+
+    /* Reorganize a ordem da imagem e do texto para seções com imagens e texto */
+    .section-content {
+        flex-direction: column-reverse; /* Inverte a ordem dos elementos na seção */
+    }
+
+    /* Ajuste a ordem dos depoimentos */
+    .testimonial-container {
+        flex-direction: column; /* Empilha os depoimentos verticalmente */
+    }
+}
+
+/* ... (seus estilos existentes) */
+
+/* Estilos padrão para tamanhos de tela maiores */
+.image-section-content h2 {
+    font-size: 50px;
+}
+
+.image-section-content p {
+    font-size: 25px;
+}
+
+/* Adicione media queries para ajustar o tamanho da fonte para telas menores */
+@media screen and (max-width: 768px) {
+    .image-section-content h2 {
+        font-size: 40px;
+    }
+
+    .image-section-content p {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .image-section-content h2 {
+        font-size: 30px;
+    }
+
+    .image-section-content p {
+        font-size: 16px;
+    }
+}
+
+/* Restante do seu estilo para a seção de contato */
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px; /* Defina o limite máximo de largura desejado */
+    margin: 0 auto; /* Centraliza a seção na página */
+}
+
+.container, .contact-info {
+    width: 48%; /* Ajusta a largura dos contêineres dentro da seção */
+}
+
+/* Adicione media queries para ajustar a largura dos contêineres para telas menores */
+@media screen and (max-width: 768px) {
+    .container, .contact-info {
+        width: 100%; /* Para ocupar toda a largura em telas menores */
+    }
+}
+/* Estilos padrão para telas maiores */
+.service-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilos para telas médias */
+@media screen and (max-width: 768px) {
+    .service-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service {
+        width: 100%;
+        margin-bottom: 20px; /* Adiciona espaço entre os serviços */
+    }
+}
+
+/* Estilos para telas pequenas */
+@media screen and (max-width: 520px) {
+    .service-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service {
+        width: 100%;
+        margin-bottom: 20px; /* Adiciona espaço entre os serviços */
+    }
+}
+
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <img src="wes.png" alt="logo">
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#Serviços">About</a>
+        <a href="#Depoimentos">Services</a>
+        <a href="#Contato">Contact</a>
+    </nav>
+
+   
+    
+    <section class="section-hover"> <!-- Adiciona a classe para o efeito de clique -->
+        <div class="image-section">
+            <div class="image-overlay"></div>
+            <div class="image-section-content">
+                <h2>Descubra Insights</h2>
+                <h2>Valiosos</h2>
+                <p>Transforme dados em estratégias eficazes para o seu negócio</p>
+                <p>com nossa tecnologia avançada.</p>
+                <a href="#" class="button">Saiba Mais</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-hover1">
+            <p>A DataInsight Solutions é uma empresa especializada em soluções de análise de dados.</p>
+            <p>Com sede em São Carlos, SP, Brasil, nossa equipe altamente qualificada oferece serviços personalizados</p>
+            <p>para ajudar as empresas a extrair insights valiosos de seus dados. Seja para otimizar processos, identificar tendências</p>
+            <p>ou tomar decisões estratégicas, nossa experiência e tecnologia de ponta garantem resultados precisos e confiáveis.</p>
+            <p>Conte conosco para transformar seus dados em informações estratégicas e impulsionar o crescimento do seu negócio.</p>
+        </div>
+
+        <h2>Serviços</h2>
+
+        <div class="service-container">
+            <div class="service">
+                <img src="ponto-de-interrogacao-285x300.webp" alt="Serviço 1">
+                <h3>Consultoria de Dados</h3>
+                <p>Fornecemos aconselhamento especializado em estratégias de dados para impulsionar o crescimento do seu negócio.</p>
+            </div>
+
+            <div class="service">
+                <img src="analise-de-dados.jpg.webp" alt="Serviço 2">
+                <h3>Análise de Dados</h3>
+                <p>Realizamos análises de dados precisas para obter insights valiosos e tomar decisões informadas.</p>
+            </div>
+
+            <div class="service">
+                <img src="negocios_digitales.webp" alt="Serviço 3">
+                <h3>Soluções Personalizadas</h3>
+                <p>Desenvolvemos soluções sob medida para atender às suas necessidades específicas de negócios, usando dados como base.</p>
+            </div>
+        </div>
+
+        <h2>Depoimentos</h2>
+
+        <section>
+            <section class="testimonial-container">
+                <div class="testimonial">
+                <img src="istockphoto-1369508766-1024x1024.jpg" alt="Depoimento 1">
+                <strong>DataInsight Solutions oferece soluções de dados incríveis! Equipe altamentequalificada e atenciosa, sempre pronta para atender às necessidades dos clientes. Recomento fortemente seus serviços para quem busca excelência em análise de dados.</strong></p>
+                <p>- Ana Silva</p>
+            </div>
+
+            
+                <div class="testimonial">
+                <img src="istockphoto-1331257339-1024x1024.jpg" alt="Depoimento 2">
+                <strong>"A experiência com DataInsight Solutions superou minhas expectativas. Eles não apenas fornecem análises de dados detalhadas, mas também oferecem insights estratégicos para impulsionar o crescimento dos negócios. Profissionais altamente competentes e comprometidos!"</strong>
+                <p>- João Oliveira</p>
+            </div>
+
+            
+                <div class="testimonial">
+                <img src="istockphoto-1360028830-1024x1024 (1).jpg" alt="Depoimento 3">
+                <strong>"DataInsight Solutions transformou nossa abordagem aos dados. Sua expertise nos permitiu tomar decisões mais informadas e estratégicas. Uma parceria valiosa para qualquer empresa que valoriza a análise de dados como um diferencial competitivo."</strong>
+                <p>- Maria Santos</p>
+            </div>
+        </section>
+        
+
+<section class="section-hover2">
+    <div class="section-content">
+        <div class="section-text">
+           
+            <h3>Estratégias de</h3>
+            <h3>visualização de dados</h3>
+            <p>Desenvolvemos e implementamos estratégias eficases de visualizaçãode dados que permitem uma compreensão clara e intuitiva das informações, auxiliando na tomada de decisões assertivas.</p>
+        </div>
+        <div class="section-image">
+            <img src="fgg.jpg" alt="Descrição da Imagem">
+        </div>
+    </div>
+</section>
+
+
+
+<section class="section-hover2 section-inverted">
+    <div class="section-content">
+        <div class="section-image">
+            <img src="digitalizacao_documentos-1-7.webp" alt="Descrição da Imagem">
+        </div>
+        <div class="section-text">
+            
+            <h3>Otimização de</h3>
+            <h3>Armazenamento de Dados</h3>
+            <p>Maximize a eficiência do armazenamento de dados da sua empresa, aproveitando ao máximo o espaço disponível e garantindo velocidade e segurança no acesso a`s informações.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section-hover2">
+    <div class="section-content">
+        <div class="section-text">
+           
+            <h3>Integração de Dados</h3>
+            <h3>Eficiente</h3>
+            <p>Maximize a eficiência da sua empresa entegrando de forma rápida os dados de diferentes fontes. Otimize processos e tomadas de decisão com uma integração de dados eficiente e confiável.</p>
+        </div>
+        <div class="section-image">
+            <img src="ícone-de-integração-dados-ilustração-d-partir-da-recolha-científicos-criativos-para-design-web-coleção-criativa-modelos-257690048.jpg" alt="Descrição da Imagem">
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Adição de Carrossel de Clientes -->
+<section class="carousel-container">
+    <h2>Nossos Clientes</h2>
+    <div class="slick-carousel">
+        <div><img src="7ec60c9d258a5141a3cac40034866be1.jpg" alt="Cliente 1" class="client-logo"></div>
+        <div><img src="e6e39a6b5c8f489903fa02c1efafbc98.jpg" alt="Cliente 2" class="client-logo"></div>
+        <div><img src="e93dd77e62b2314e9673e4428f8e28cb.jpg" alt="Cliente 3" class="client-logo"></div>
+        <div><img src="039017bb0328a77bd35dc467e81eeb17.jpg" alt="Cliente 4" class="client-logo"></div>
+        <!-- Adicione mais logos conforme necessário -->
+    </div>
+</section>
+
+<!-- Seu conteúdo HTML existente aqui -->
+
+<!-- Adicione os scripts do Slick Carousel no final do corpo -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+    // Inicialização do Carrossel
+    $(document).ready(function(){
+        $('.slick-carousel').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 600
+        });
+    });
+</script>
+
+<!-- Adicione este código dentro da seção "Sobre Nós" -->
+<section class="about-us-section">
+    <div class="section-content">
+        <div class="section-text">
+            <h2>Sobre nós</h2>
+            <p>Somos a DataInsight Solutions, uma empresa especializada em transformar dados em estratégias eficazes para o seu negócio. Com sede em São Carlos, SP, Brasil, nossa equipe altamente qualificada oferece serviços personalizados para ajudar as empresas a extrair insights valiosos de seus dados.</p>
+            <p>Seja para otimizar processos, identificar tendências ou tomar decisões estratégicas, nossa experiência e tecnologia de ponta garantem resultados precisos e confiáveis. Conte conosco para impulsionar o crescimento do seu negócio através da análise de dados.</p>
+        </div>
+        <div class="section-image">
+            <img src="job-5382501_1280.jpg" alt="Imagem sobre nós">
+        </div>
+    </div>
+</section>
+
+
+<section class="contact-section">
+    <div class="container">
+        <label for="fname">Nome</label>
+        <input type="text" id="fname" name="fname">
+      
+        <label for="email">E-mail</label>
+        <input type="text" id="email" name="email">
+      
+        <label for="message">Entre em contato</label>
+        <textarea id="message" name="message" style="height:200px"></textarea>
+      
+        <button type="submit">Enviar</button>
+    </div>
+
+    <div class="contact-info">
+        <h3>Fale Conosco</h3>
+        <p>Entre em contato conosco usando o formulário abaixo. Estamos ansiosos para ouvir você e ajudá-lo com suas necessidades de construção. </p>
+    </div>
+</section>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Redes Sociais com ícones Font Awesome -->
+            <div class="social-media">
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+    
+            <!-- Informações da Empresa -->
+            <div class="company-info">
+                <p>© 2024 DataInsight Solutions</p>
+            </div>
+    
+            <!-- Navegação do Rodapé -->
+            <div class="footer-navigation">
+                <a href="#">Sobre Nós</a>
+                <a href="#">Serviços</a>
+                <a href="#">Depoimentos</a>
+                <a href="#">Contato</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
