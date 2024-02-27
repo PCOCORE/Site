@@ -6,15 +6,16 @@
     <title>Página Exemplo</title>
 
     <!-- Adicione o trecho de código da fonte Montserrat aqui -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
-    <!-- Adicione o trecho de código da fonte Montserrat aqui -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <!-- Remova uma das referências à fonte Montserrat -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
 
-    <!-- Adicione o link para a biblioteca Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <!-- Adicione o link para a biblioteca Slick Carousel -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+<!-- Adicione o link para a biblioteca Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<!-- Adicione o link para a biblioteca Slick Carousel -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+
     <style>
         body {
             margin: 0;
@@ -129,14 +130,16 @@
         }
 
         .section-hover2 {
-            max-width: 1000px; /* Defina a largura máxima desejada */
-            margin: 0 auto; /* Adiciona margens automáticas para centralizar na horizontal */
-            padding: 20px; /* Adiciona algum espaçamento interno */
-            background-color: #ffe3c7; /* Cor de fundo da sessão */
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
             border-radius: 10px;
             cursor: pointer;
             transition: background-color 0.3s ease-in-out;
+            margin: 50px; /* Isso está duplicado, mantenha apenas uma vez */
         }
+        
 
         .section-hover2:hover {
             background-color: #ffe3c7; /* Altera a cor de fundo ao passar o mouse */
@@ -350,7 +353,7 @@ input[type=text], textarea {
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
-    background-color: rgb(240, 240, 240); /* Fundo cinza claro */
+    background-color: #ffe3c7
 }
 
 button {
@@ -631,24 +634,38 @@ nav a:hover {
 
 
         
-    </style>
+</style>
+
+<!-- Seus scripts JavaScript e jQuery aqui -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.slick-carousel').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 600
+        });
+    });
+</script>
 </head>
 <body>
-    <header>
-        <img src="wes.png" alt="logo">
-    </header>
+<header>
+    <img src="wes.png" alt="logo">
+</header>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#Serviços">About</a>
-        <a href="#Depoimentos">Services</a>
-        <a href="#Contato">Contact</a>
-    </nav>
-
+<nav>
+    <a href="#sobre-nos">Sobre Nós</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#depoimentos">Depoimentos</a>
+    <a href="#contato">Contato</a>
+</nav>
    
     
-    <section class="section-hover"> <!-- Adiciona a classe para o efeito de clique -->
-        <div class="image-section">
+<section id="sobre-nos" class="section-hover">
+    <div class="image-section">
             <div class="image-overlay"></div>
             <div class="image-section-content">
                 <h2>Descubra Insights</h2>
@@ -658,7 +675,7 @@ nav a:hover {
                 <a href="#" class="button">Saiba Mais</a>
             </div>
         </div>
-    </section>
+   
 
     <section>
         <div class="section-hover1">
@@ -668,6 +685,10 @@ nav a:hover {
             <p>ou tomar decisões estratégicas, nossa experiência e tecnologia de ponta garantem resultados precisos e confiáveis.</p>
             <p>Conte conosco para transformar seus dados em informações estratégicas e impulsionar o crescimento do seu negócio.</p>
         </div>
+    </section>
+
+
+    <section id="servicos"></section>
 
         <h2>Serviços</h2>
 
@@ -690,6 +711,8 @@ nav a:hover {
                 <p>Desenvolvemos soluções sob medida para atender às suas necessidades específicas de negócios, usando dados como base.</p>
             </div>
         </div>
+
+        <section id="depoimentos"></section>
 
         <h2>Depoimentos</h2>
 
@@ -806,6 +829,8 @@ nav a:hover {
         </div>
     </div>
 </section>
+
+<section id="contato" class="contact-section"></section>
 
 
 <section class="contact-section">
