@@ -833,19 +833,21 @@ nav a:hover {
 <section id="contato" class="contact-section"></section>
 
 
-<section class="contact-section">
+<section id="contato" class="contact-section">
     <div class="container">
-        <form action="mailto:pcocore.data@gmail.com" method="post" enctype="text/plain"></form>
-        <label for="fname">Nome</label>
-        <input type="text" id="fname" name="fname">
-      
-        <label for="email">E-mail</label>
-        <input type="text" id="email" name="email">
-      
-        <label for="message">Entre em contato</label>
-        <textarea id="message" name="message" style="height:200px"></textarea>
-      
-        <button type="submit">Enviar</button>
+        <!-- Adicione o atributo action com o endereço de e-mail no formulário -->
+        <form action="mailto:seuemail@example.com" method="post" enctype="text/plain">
+            <label for="fname">Nome</label>
+            <input type="text" id="fname" name="fname">
+          
+            <label for="email">E-mail</label>
+            <input type="text" id="email" name="email">
+          
+            <label for="message">Entre em contato</label>
+            <textarea id="message" name="message" style="height:200px"></textarea>
+          
+            <button type="submit">Enviar</button>
+        </form>
     </div>
 
     <div class="contact-info">
@@ -853,7 +855,6 @@ nav a:hover {
         <p>Entre em contato conosco usando o formulário abaixo. Estamos ansiosos para ouvir você e ajudá-lo com suas necessidades de construção. </p>
     </div>
 </section>
-    </section>
 
     <footer>
         <div class="footer-container">
