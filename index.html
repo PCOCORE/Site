@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PCO CORE</title>
+    <title>PCO Core - Consultoria de Dados Estratégica</title>
+    <meta name="description" content="Transforme dados em estratégias eficazes para o seu negócio. Consultoria de dados, análise de dados e soluções personalizadas.">
+    <meta name="keywords" content="consultoria de dados, análise de dados, soluções personalizadas, estratégias de visualização de dados, otimização de armazenamento de dados, integração de dados, PCO Core">
 
     <!-- Adicione o trecho de código da fonte Montserrat aqui -->
     <!-- Remova uma das referências à fonte Montserrat -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
-
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 <!-- Adicione o link para a biblioteca Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
@@ -393,9 +395,11 @@ footer {
 }
 
 .social-media a {
-    color: white;
+    display: block;
+    margin-bottom: 20px;
+    font-size: 24px; /* Ajuste o tamanho dos ícones aqui */
+    color: #fff;
     text-decoration: none;
-    margin-right: 20px;
     transition: color 0.3s ease-in-out;
 }
 
@@ -422,6 +426,28 @@ footer {
 
 .footer-navigation a:hover {
     color: #f24f00; /* Cor de destaque ao passar o mouse */
+}
+
+
+
+
+
+.whatsapp-floating {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: #fff;
+    padding: 30px; /* Aumente o tamanho do padding para aumentar o ícone */
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.whatsapp-floating i {
+    font-size: 40px; /* Ajuste o tamanho do ícone aqui */
 }
 
 
@@ -653,14 +679,14 @@ nav a:hover {
 </head>
 <body>
 <header>
-    <img src="wes.png" alt="logo">
+    <img src="wes.png" alt="PCO Core Logo">
 </header>
 
 <nav>
-    <a href="#sobre-nos">Sobre Nós</a>
-    <a href="#servicos">Serviços</a>
-    <a href="#depoimentos">Depoimentos</a>
-    <a href="#contato">Contato</a>
+    <a href="#sobre-nos" title="Saiba mais sobre a PCO Core">Sobre Nós</a>
+    <a href="#servicos" title="Conheça nossos serviços de consultoria e análise de dados">Serviços</a>
+    <a href="#depoimentos" title="Leia os depoimentos de nossos clientes">Depoimentos</a>
+    <a href="#contato" title="Entre em contato conosco">Contato</a>
 </nav>
    
     
@@ -815,6 +841,63 @@ nav a:hover {
         });
     });
 </script>
+<script>
+    // Função para definir um cookie
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+// Função para obter o valor de um cookie
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+// Verificar se o cookie 'visited' já existe
+var visited = getCookie('visited');
+
+// Se o cookie não existir, defina o cookie e execute sua lógica
+if (!visited) {
+    // Sua lógica aqui...
+
+    // Defina o cookie 'visited' com um período de validade (por exemplo, 30 dias)
+    setCookie('visited', 'true', 30);
+
+    // Enviar dados para o servidor (substitua a URL com a URL do seu servidor)
+    fetch('http://seuservidor.com/enviar-email', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            email: 'pcocore.data@gmail.com',
+            dataVisita: new Date().toISOString(),
+            // Outros dados que você deseja enviar
+        }),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erro ao enviar dados para o servidor');
+        }
+        return response.json();
+    })
+    .catch(error => console.error('Erro:', error));
+}
+
+</script>
+
 
 <!-- Adicione este código dentro da seção "Sobre Nós" -->
 <section class="about-us-section">
@@ -835,8 +918,8 @@ nav a:hover {
 
 <section id="contato" class="contact-section">
     <div class="container">
-        <!-- Adicione o atributo action com o endereço de e-mail no formulário -->
-        <form action="mailto:seuemail@example.com" method="post" enctype="text/plain">
+        <!-- Atualize o atributo action com o endereço de e-mail desejado -->
+        <form action="mailto:pcocore.data@gmail.com" method="post" enctype="text/plain">
             <label for="fname">Nome</label>
             <input type="text" id="fname" name="fname">
           
@@ -847,7 +930,6 @@ nav a:hover {
             <textarea id="message" name="message" style="height:200px"></textarea>
           
             <button type="submit">Enviar</button>
-            <form action="https://pcocore.github.io/Site/" method="post" enctype="text/plain">
         </form>
     </div>
 
@@ -857,18 +939,29 @@ nav a:hover {
     </div>
 </section>
 
+
     <footer>
         <div class="footer-container">
             <!-- Redes Sociais com ícones Font Awesome -->
             <div class="social-media">
-                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61552685047689" target="_blank"><i class="fab fa-facebook"></i></a>
+                
+                <a href="https://www.instagram.com/pcocore/" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
+            </div></div>
+
+
+            <!-- Ícone do WhatsApp flutuante -->
+    <div class="whatsapp-floating">
+        <a href="https://contate.me/pcocore" target="_blank" title="Converse conosco no WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
     
             <!-- Informações da Empresa -->
             <div class="company-info">
                 <p>© 2024 PCO Core Data and Tecnology </p>
+            </div>
             </div>
     
             <!-- Navegação do Rodapé -->
