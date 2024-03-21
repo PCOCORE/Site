@@ -139,6 +139,16 @@
         .button:hover {
             background-color: #0056b3; /* Cor de fundo do botão ao passar o mouse */
         }
+
+
+
+
+
+
+
+
+
+        
         
         
                 
@@ -505,57 +515,79 @@ button:hover {
 
 
 
+/* Estilos para o rodapé */
 footer {
-    background-color: #001F3F;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+    background-color: #001F3f; /* Cor de fundo do rodapé */
+    color: white; /* Cor do texto no rodapé */
+    padding: 40px 0; /* Espaçamento interno do rodapé */
+    text-align: center; /* Centraliza o conteúdo do rodapé */
 }
 
 .footer-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.social-media {
-    display: flex;
-    align-items: center;
-}
-
-.social-media a {
-    display: block;
-    margin-bottom: 20px;
-    font-size: 24px; /* Ajuste o tamanho dos ícones aqui */
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-}
-
-.social-media a:hover {
-    color: #66c2a5; /* Cor de destaque ao passar o mouse */
+    flex-wrap: wrap;
 }
 
 .company-info {
-    flex: 1;
-    text-align: left;
+    text-align: left; /* Alinha as informações da empresa à esquerda */
+}
+
+.social-media {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Centraliza os ícones de redes sociais */
+}
+
+.social-media a {
+    margin: 0 10px; /* Espaçamento entre os ícones */
+    color: white; /* Cor dos ícones de redes sociais */
+    font-size: 24px; /* Tamanho dos ícones */
 }
 
 .footer-navigation {
-    flex: 1;
-    text-align: right;
+    margin-top: 20px; /* Espaçamento superior da navegação do rodapé */
 }
 
 .footer-navigation a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    transition: color 0.3s ease-in-out;
+    color: white; /* Cor dos links de navegação */
+    text-decoration: none; /* Remove sublinhado dos links */
+    margin: 0 10px; /* Espaçamento entre os links */
+    font-size: 16px; /* Tamanho dos links */
 }
 
-.footer-navigation a:hover {
-    color: #D3D3D3; /* Cor de destaque ao passar o mouse */
+.whatsapp-floating {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
 }
+
+/* Estilos para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    .company-info {
+        display: none; /* Esconde as informações da empresa em dispositivos móveis */
+    }
+
+    .social-media {
+        order: -1; /* Move os ícones de redes sociais para o início em dispositivos móveis */
+        margin-top: 20px; /* Espaçamento superior para os ícones de redes sociais em dispositivos móveis */
+    }
+
+    .footer-navigation {
+        margin-top: 40px; /* Aumenta o espaçamento superior da navegação do rodapé em dispositivos móveis */
+    }
+
+    .whatsapp-floating {
+        bottom: 70px; /* Ajusta a posição do ícone do WhatsApp flutuante em dispositivos móveis */
+    }
+
+    .company-info-mobile {
+        text-align: center; /* Centraliza o texto no rodapé em dispositivos móveis */
+        margin-top: 20px; /* Espaçamento superior para o texto no rodapé em dispositivos móveis */
+    }
+}
+
 
 
 
@@ -1072,6 +1104,7 @@ if (!visited) {
 
 
 <!-- Adicione este código dentro da seção "Sobre Nós" -->
+<section id="sobre-nos"></section>
 <section class="about-us-section">
     <div class="section-content">
         <div class="section-text">
@@ -1113,38 +1146,38 @@ if (!visited) {
 </section>
 
 
-    <footer>
-        <div class="footer-container">
-            <!-- Redes Sociais com ícones Font Awesome -->
-            <div class="social-media">
-                <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61552685047689" target="_blank"><i class="fab fa-facebook"></i></a>
-                
-                <a href="https://www.instagram.com/pcocore/" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-            </div></div>
+<footer>
+    <div class="footer-container">
+        <!-- Informações da Empresa -->
+        <div class="company-info">
+            <p>Endereço: Rua Av João Stella, 300 -  São Carlos, SP</p>
+            <p>Telefone: (16) 99194-0396</p>
+        </div>
 
+        <!-- Redes Sociais com ícones Font Awesome -->
+        <div class="social-media">
+            <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61552685047689" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/pcocore/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
 
-            <!-- Ícone do WhatsApp flutuante -->
+        <!-- Navegação do Rodapé -->
+        <div class="footer-navigation">
+            <a href="#sobre-nos">Sobre Nós</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#depoimentos">Depoimentos</a>
+            <a href="#contato">Contato</a>
+        </div>
+    </div>
+
+    <!-- Ícone do WhatsApp flutuante -->
     <div class="whatsapp-floating">
         <a href="https://contate.me/pcocore" target="_blank" title="Converse conosco no WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
-    
-            <!-- Informações da Empresa -->
-            <div class="company-info">
-                <p>© 2024 DataMax Company </p>
-            </div>
-            </div>
-    
-            <!-- Navegação do Rodapé -->
-            <div class="footer-navigation">
-                <a href="#sobre-nos">Sobre Nós</a>
-                <a href="#servicos">Serviços</a>
-                <a href="#depoimentos">Depoimentos</a>
-                <a href="#contato">Contato</a>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+
+    <!-- Informações da Empresa -->
+    <div class="company-info-mobile">
+        <p>© 2024 DataMax Company </p>
+    </div>
+</footer>
