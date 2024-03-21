@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PCO Core - Consultoria de Dados Estratégica</title>
+    <title>DataMax Company - Consultoria de Dados Estratégica</title>
     <meta name="description" content="Transforme dados em estratégias eficazes para o seu negócio. Consultoria de dados, análise de dados e soluções personalizadas.">
     <meta name="keywords" content="consultoria de dados, análise de dados, soluções personalizadas, estratégias de visualização de dados, otimização de armazenamento de dados, integração de dados, PCO Core">
 
@@ -69,9 +69,95 @@
             
         }
 
+
+
+
+
+
+        .video-section {
+            position: relative;
+            width: 100%;
+            height: 500px; /* Altura do vídeo */
+            overflow: hidden;
+        }
+        
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.5); /* Ajusta o brilho do vídeo para torná-lo meio-fosco */
+            opacity: 0.7; /* Ajusta a opacidade do vídeo */
+        }
+        
+        .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            text-align: center;
+            color: white; /* Cor do texto */
+        }
+        
+        .image-section-content {
+            background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo do texto com opacidade */
+            padding: 50px; /* Espaçamento interno do conteúdo */
+            width: 100%;
+            height: 100%;
+        }
+        
+        .image-section-content h2 {
+            margin: 10px 0;
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+        
+        .image-section-content p {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #007bff; /* Cor de fundo do botão */
+            color: white; /* Cor do texto do botão */
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .button:hover {
+            background-color: #0056b3; /* Cor de fundo do botão ao passar o mouse */
+        }
+        
+        
+                
+        
+
+
+
+
+
+
+
+
+
+
+
+
         .image-section {
             height: 400px; /* Altura da imagem */
-            background-image: url('negocios_digitales.webp'); /* Substitua com o URL da sua imagem */
+            background-image: url('1109248_1080p_4k_2k_1280x720.mp4'); /* Substitua com o URL da sua imagem */
             background-size: cover;
             background-position: center;
             position: relative;
@@ -143,7 +229,7 @@
             max-width: 100%;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f0f0f0;
+            background-color: #050505;
             border-radius: 10px;
             cursor: pointer;
             transition: background-color 0.3s ease-in-out;
@@ -315,13 +401,15 @@
         .carousel-container {
             max-width: 80%;
             margin: 0 auto;
-            margin-top: 50px;
+            margin-top: 100px;
+            
         }
 
         .client-logo {
-            width: 100px; /* Ajuste conforme necessário */
+            width: 150px; /* Ajuste conforme necessário */
             height: auto;
             margin: 0 auto;
+            margin-top: 100px;
         }
 
 
@@ -331,6 +419,7 @@
 .about-us-section {
     background-color: #ffe3c7; /* Cor de fundo da seção "Sobre Nós" */
     padding: 40px; /* Espaçamento interno da seção */
+    margin-top: 100px;
 }
 
 .section-content {
@@ -360,6 +449,7 @@
     width: 100%; /* Garante que a imagem preencha a largura da div */
     height: auto;
     border-radius: 10px;
+    
 }
 
 
@@ -518,14 +608,19 @@ nav {
 
 nav a {
     margin: 0 10px;
-    color: white;
+    color: rgb(5, 5, 5);
     text-decoration: none;
-    transition: color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out; /* Transição da cor de fundo com duração de 0.3 segundos */
+    background-color: transparent; /* Define a cor de fundo inicial como transparente */
+    padding: 5px 10px; /* Adiciona um preenchimento interno para destacar melhor o efeito */
 }
 
 nav a:hover {
-    color: #333;
+    background-color: orange; /* Define a cor de fundo como laranja ao passar o mouse */
+    color: white; /* Define a cor do texto como branco */
 }
+
+
 
 
 
@@ -569,6 +664,17 @@ nav a:hover {
     /* Ajuste a ordem dos depoimentos */
     .testimonial-container {
         flex-direction: column; /* Empilha os depoimentos verticalmente */
+    }
+
+    @media only screen and (max-width: 768px) {
+        .carousel-container {
+            max-width: 100%; /* Ocupa toda a largura disponível */
+            margin-top: 50px; /* Reduz o espaçamento superior */
+        }
+    
+        .client-logo {
+            max-width: 100px; /* Reduz a largura máxima da imagem para caber em telas menores */
+        }
     }
 }
 
@@ -718,8 +824,11 @@ nav a:hover {
 
 <body>
 <header>
-    <img src="data-removebg-preview.png" alt="DataInsights Solutions Logo">
+    
+    <img src="WhatsApp_Image_2024-03-20_at_17.33.26-removebg-preview.png" alt="DataInsights Solutions Logo">
 </header>
+
+
 
 <nav>
     <a href="#sobre-nos" title="Saiba mais sobre a DataInsights Solutions">Sobre Nós</a>
@@ -728,23 +837,26 @@ nav a:hover {
     <a href="#contato" title="Entre em contato conosco">Contato</a>
 </nav>
    
-    
-<section id="sobre-nos" class="section-hover">
-    <div class="image-section">
-            <div class="image-overlay"></div>
-            <div class="image-section-content">
-                <h2>Descubra Insights</h2>
-                <h2>Valiosos</h2>
-                <p>Transforme dados em estratégias eficazes para o seu negócio</p>
-                <p>com nossa tecnologia avançada.</p>
-                <a href="https://contate.me/pcocore" class="button">Saiba Mais</a>
-            </div>
+<div class="video-section">
+    <video autoplay muted loop class="background-video">
+        <source src="1109248_1080p_4k_2k_1280x720.mp4" type="video/mp4">
+        <!-- Adicione outros formatos de vídeo aqui, se necessário -->
+    </video>
+    <div class="content">
+        <div class="image-section-content">
+            <h2>Descubra Insights</h2>
+            <h2>Valiosos</h2>
+            <p>Transforme dados em estratégias eficazes para o seu negócio</p>
+            <p>com nossa tecnologia avançada.</p>
+            <a href="https://contate.me/pcocore" class="button">Saiba Mais</a>
         </div>
-   
+    </div>
+</div>
+
 
     <section>
         <div class="section-hover1">
-            <p>A DataInsights Solutions é uma empresa especializada em soluções de análise de dados.</p>
+            <p>A DataMax Company é uma empresa especializada em soluções de análise de dados.</p>
             <p>Com sede em São Carlos, SP, Brasil, nossa equipe altamente qualificada oferece serviços personalizados</p>
             <p>para ajudar as empresas a extrair insights valiosos de seus dados. Seja para otimizar processos, identificar tendências</p>
             <p>ou tomar decisões estratégicas, nossa experiência e tecnologia de ponta garantem resultados precisos e confiáveis.</p>
@@ -780,7 +892,7 @@ nav a:hover {
 
         <div class="service-container">
             <div class="service">
-                <video src="1110073_Entrepreneurship_Presentation_Leader_1280x720.mp4" autoplay muted loop alt="Consultoria de Dados"></video>               
+                <video src="1110073_Entrepreneurship_Presentation_Leader_1280x720.mp4" autoplay muted loop alt="Consultoria de Dados"></video>                
                 <h3>Consultoria Empresarial Personalizada</h3>
                 <p>Nossa equipe experiente de consultores trabalha em estreita colaboração com sua empresa para identificar áreas de oportunidade e desenvolver estratégias personalizadas que impulsionam o crescimento e o sucesso. Utilizamos análise de dados para garantir que nossas soluções sejam baseadas em insights precisos e informados.</p>
             </div>
@@ -806,21 +918,21 @@ nav a:hover {
             <section class="testimonial-container">
                 <div class="testimonial">
                 <img src="istockphoto-1369508766-1024x1024.jpg" alt="Depoimento 1">
-                <strong>DataInsights Solutions oferece soluções de dados incríveis! Equipe altamentequalificada e atenciosa, sempre pronta para atender às necessidades dos clientes. Recomento fortemente seus serviços para quem busca excelência em análise de dados.</strong></p>
+                <strong>DataMax Company oferece soluções de dados incríveis! Equipe altamentequalificada e atenciosa, sempre pronta para atender às necessidades dos clientes. Recomento fortemente seus serviços para quem busca excelência em análise de dados.</strong></p>
                 <p>- Ana Silva</p>
             </div>
 
             
                 <div class="testimonial">
                 <img src="istockphoto-1331257339-1024x1024.jpg" alt="Depoimento 2">
-                <strong>"A experiência com DataInsights Solutions superou minhas expectativas. Eles não apenas fornecem análises de dados detalhadas, mas também oferecem insights estratégicos para impulsionar o crescimento dos negócios. Profissionais altamente competentes e comprometidos!"</strong>
+                <strong>"A experiência com DataMax Company superou minhas expectativas. Eles não apenas fornecem análises de dados detalhadas, mas também oferecem insights estratégicos para impulsionar o crescimento dos negócios. Profissionais altamente competentes e comprometidos!"</strong>
                 <p>- João Oliveira</p>
             </div>
 
             
                 <div class="testimonial">
                 <img src="istockphoto-1360028830-1024x1024 (1).jpg" alt="Depoimento 3">
-                <strong>"DataInsights Solutions transformou nossa abordagem aos dados. Sua expertise nos permitiu tomar decisões mais informadas e estratégicas. Uma parceria valiosa para qualquer empresa que valoriza a análise de dados como um diferencial competitivo."</strong>
+                <strong>"DataMax Company transformou nossa abordagem aos dados. Sua expertise nos permitiu tomar decisões mais informadas e estratégicas. Uma parceria valiosa para qualquer empresa que valoriza a análise de dados como um diferencial competitivo."</strong>
                 <p>- Maria Santos</p>
             </div>
         </section>
@@ -964,7 +1076,7 @@ if (!visited) {
     <div class="section-content">
         <div class="section-text">
             <h2>Sobre nós</h2>
-            <p>Somos a DataInsights Solutions, uma empresa especializada em transformar dados em estratégias eficazes para o seu negócio. Com sede em São Carlos, SP, Brasil, nossa equipe altamente qualificada oferece serviços personalizados para ajudar as empresas a extrair insights valiosos de seus dados.</p>
+            <p>Somos a DataMax Company, uma empresa especializada em transformar dados em estratégias eficazes para o seu negócio. Com sede em São Carlos, SP, Brasil, nossa equipe altamente qualificada oferece serviços personalizados para ajudar as empresas a extrair insights valiosos de seus dados.</p>
             <p>Seja para otimizar processos, identificar tendências ou tomar decisões estratégicas, nossa experiência e tecnologia de ponta garantem resultados precisos e confiáveis. Conte conosco para impulsionar o crescimento do seu negócio através da análise de dados.</p>
         </div>
         <div class="section-image">
@@ -1021,7 +1133,7 @@ if (!visited) {
     
             <!-- Informações da Empresa -->
             <div class="company-info">
-                <p>© 2024 DataInsights Solutions </p>
+                <p>© 2024 DataMax Company </p>
             </div>
             </div>
     
@@ -1036,4 +1148,3 @@ if (!visited) {
     </footer>
 </body>
 </html>
-            
