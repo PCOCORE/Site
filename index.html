@@ -571,32 +571,57 @@ button:hover {
 
 
 /* Estilos para o rodapé */
+/* Estilos para o rodapé */
+/* Estilos para o rodapé */
 footer {
     background-color: #001F3f; /* Cor de fundo do rodapé */
     color: white; /* Cor do texto no rodapé */
     padding: 40px 0; /* Espaçamento interno do rodapé */
     text-align: center; /* Centraliza o conteúdo do rodapé */
+    position: relative; /* Define a posição relativa para que possamos posicionar o cabeçalho absolutamente dentro dele */
 }
+
+/* Cabeçalho */
+.company-name {
+    text-align: center; /* Centraliza o nome da empresa */
+    margin-bottom: 20px; /* Espaçamento inferior do cabeçalho */
+    position: absolute; /* Posiciona absolutamente */
+    top: 0; /* Define a partir do topo */
+    left: 0; /* Alinha à esquerda */
+    right: 0; /* Alinha à direita */
+    margin-top: 50px;
+}
+
+.company-name h2 {
+    margin: 0; /* Remove margem padrão do h2 */
+    
+}
+
 
 .footer-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    margin: 10px;
 }
 
 .company-info {
     text-align: left; /* Alinha as informações da empresa à esquerda */
+    margin-top: 120px;
+    margin: 50px;
 }
 
 .social-media {
     flex-grow: 1;
     display: flex;
     justify-content: center; /* Centraliza os ícones de redes sociais */
+    margin-top: 450px;
+    margin-bottom: 50px;
 }
 
 .social-media a {
-    margin: 0 10px; /* Espaçamento entre os ícones */
+    margin: 0 15px; /* Espaçamento entre os ícones */
     color: white; /* Cor dos ícones de redes sociais */
     font-size: 24px; /* Tamanho dos ícones */
 }
@@ -608,7 +633,7 @@ footer {
 .footer-navigation a {
     color: white; /* Cor dos links de navegação */
     text-decoration: none; /* Remove sublinhado dos links */
-    margin: 0 10px; /* Espaçamento entre os links */
+    margin: 0 15px; /* Espaçamento entre os links */
     font-size: 16px; /* Tamanho dos links */
 }
 
@@ -642,8 +667,6 @@ footer {
         margin-top: 20px; /* Espaçamento superior para o texto no rodapé em dispositivos móveis */
     }
 }
-
-
 
 
 
@@ -1210,13 +1233,8 @@ if (!visited) {
     </div>
 </section>
 
-<section id="contato" class="contact-section"></section>
-
-
 <section id="contato" class="contact-section">
     <div class="container">
-        <!-- Atualize o atributo action com o endereço de e-mail desejado -->
-        
         <form action="https://contate.me/pcocore" method="post" enctype="text/plain">
             <label for="fname">Nome</label>
             <input type="text" id="fname" name="fname">
@@ -1233,26 +1251,33 @@ if (!visited) {
 
     <div class="contact-info">
         <h3>Fale Conosco</h3>
-        <p>Entre em contato conosco usando o formulário abaixo. Estamos ansiosos para ouvir você e ajudá-lo com suas necessidades de construção. </p>
+        <p>Estamos ansiosos para ouvir você! Por favor, entre em contato conosco usando o formulário abaixo para nos contar sobre suas necessidades e como podemos ajudá-lo.</p>
+    </div>
+    
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3738.7986076898885!2d-47.90339268489364!3d-21.986819585507895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c65f7ee68d07e9%3A0xa9138f79e1c8d98!2sRua%20A%20-%20Parque%20das%20Mangueiras%2C%20S%C3%A3o%20Carlos%20-%20SP%2C%2013578-050!5e0!3m2!1sen!2sbr!4v1649380586823!5m2!1sen!2sbr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 </section>
 
-
 <footer>
     <div class="footer-container">
-        <!-- Informações da Empresa -->
+        <div class="company-name">
+            <h2>Datamax Company</h2>
+        </div>
+        
         <div class="company-info">
-            <p>Endereço: Rua Av João Stella, 300 -  São Carlos, SP</p>
+            <p>Endereço: Rua Av João Stella, 300 - São Carlos, SP</p>
             <p>Telefone: (16) 99194-0396</p>
+            <p>Email: contato@datamax.com</p>
         </div>
 
-        <!-- Redes Sociais com ícones Font Awesome -->
         <div class="social-media">
-            <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61552685047689" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/pcocore/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61552685047689" target="_blank" title="Visite nossa página no Facebook"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https://www.instagram.com/pcocore/" target="_blank" title="Siga-nos no Instagram"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="https://www.linkedin.com/company/datamax" target="_blank" title="Conecte-se conosco no LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://twitter.com/pcocore" target="_blank" title="Siga-nos no Twitter"><i class="fab fa-twitter fa-2x"></i></a>
         </div>
 
-        <!-- Navegação do Rodapé -->
         <div class="footer-navigation">
             <a href="#sobre-nos">Sobre Nós</a>
             <a href="#servicos">Serviços</a>
@@ -1261,15 +1286,16 @@ if (!visited) {
         </div>
     </div>
 
-    <!-- Ícone do WhatsApp flutuante -->
     <div class="whatsapp-floating">
-        <a href="https://contate.me/pcocore" target="_blank" title="Converse conosco no WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
+        <a href="https://api.whatsapp.com/send?phone=5516991940396" target="_blank" title="Converse conosco no WhatsApp"><i class="fab fa-whatsapp fa-2x"></i></a>
     </div>
 
-    <!-- Informações da Empresa -->
+    
+
     <div class="company-info-mobile">
-        <p>© 2024 DataMax Company </p>
+        <p>© 2024 DataMax Company - Todos os direitos reservados</p>
     </div>
 </footer>
+
+</body>
+</html>
